@@ -1,4 +1,6 @@
 <div class="header-wrapper">
   <h1> Modul 295 Absentia </h1>
-  <h2> Logout </h2>
+  <button *appIsInRoles="[AppRoles.User]" (click)="logout()" color="warn" mat-button>
+    {{'Logout'}}
+  </button>
 </div>
