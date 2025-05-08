@@ -1,17 +1,21 @@
-<div style="height: 100%; overflow: hidden">
+<div style="height: 100%;overflow: hidden">
   <app-header></app-header>
-  <button *ngIf="!show" (click)="onClick()" mat-icon-button type="button">
-    <mat-icon>arrow_forward_ios</mat-icon>
-  </button>
-  <div class="sidebar" style="height: 100%" *ngIf="show">
-    <div style="vertical-align: middle">
-      <button (click)="onClick()" mat-icon-button type="button">
-        <mat-icon>arrow_back_ios</mat-icon>
-      </button>
+  <div style="width: 100%; display: flex;">
+    <button *ngIf="!show" (click)="onClick()" mat-icon-button type="button">
+      <mat-icon>arrow_forward_ios</mat-icon>
+    </button>
+    <div *ngIf="show" style="height: 100vh" class="sidebar" >
+        <div style="vertical-align: middle">
+          <button (click)="onClick()" mat-icon-button type="button">
+            <mat-icon>arrow_back_ios</mat-icon>
+          </button>
+        </div>
+        <div>
+          <app-navigation/>
+        </div>
     </div>
     <div>
-      <app-navigation/>
+      <router-outlet/>
     </div>
   </div>
 </div>
-<router-outlet/>
