@@ -1,13 +1,23 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterOutlet} from '@angular/router';
 import {HeaderComponent} from './components/views/core/header/header.component';
+import {NavigationComponent} from './components/views/core/navigation/navigation.component';
+import {MatIcon} from '@angular/material/icon';
+import {MatIconButton} from '@angular/material/button';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [RouterOutlet, HeaderComponent, NavigationComponent, MatIcon, MatIconButton, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'm-295-absentia-frontend';
+  show: boolean = false
+
+  onClick() {
+    this.show = !this.show
+    console.log("Toggled")
+  }
 }
