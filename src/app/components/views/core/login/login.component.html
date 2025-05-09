@@ -1,7 +1,13 @@
-<div>
-  <h2> Login </h2>
-  <button (click)="login()" color="warn" mat-button>
-    <mat-icon>login</mat-icon>
-    {{'Login'}}
-  </button>
+<div style="height: 100%;width: 100%">
+  <div class="login-wrapper">
+    <h2> Login </h2>
+    <p> Um Absentia zu benutzen melden sie sich bitte an.</p>
+    <button (click)="login()" color="warn" mat-raised-button>
+      <mat-icon>login</mat-icon>
+      {{ 'Login' }}
+    </button>
+    <br>
+    <p> Nach dem Anmelden kann ein refresh benötigt werden.</p>
+    <button (click)="reload()" mat-raised-button> Refresh</button>
+  </div>
 </div>

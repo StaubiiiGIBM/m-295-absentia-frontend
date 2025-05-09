@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {MatButton} from '@angular/material/button';
 import {AppAuthService} from '../../../../services/app.auth.service';
 import {MatIcon} from '@angular/material/icon';
-import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,10 +13,14 @@ import {Router, RouterLink} from '@angular/router';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  constructor(private authService: AppAuthService, private router: Router) {
+  constructor(private authService: AppAuthService) {
   }
 
   async login() {
     this.authService.login()
+  }
+
+  async reload() {
+    window.location.reload();
   }
 }
