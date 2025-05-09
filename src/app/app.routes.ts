@@ -5,6 +5,7 @@ import {appCanActivate} from './guard/app.auth.guard';
 import {AppRoles} from '../app.roles';
 import {NoAccessComponent} from './components/views/pages/no-access/no-access.component';
 import {DepartmentListComponent} from './components/views/pages/department-list/department-list.component';
+import {DepartmentFormComponent} from './components/views/pages/department-form/department-form.component';
 
 export const routes: Routes = [
   {
@@ -17,6 +18,24 @@ export const routes: Routes = [
     data: {
       roles: [AppRoles.User],
       pagetitle: 'Department Listenansicht'}
+  },
+  {
+    path: 'department/add',
+    pathMatch: 'full',
+    component: DepartmentFormComponent,
+    canActivate: [appCanActivate],
+    data: {
+      roles: [AppRoles.Admin],
+      pagetitle: 'Department Hinzufügen'}
+  },
+  {
+    path: 'department/edit/:id',
+    pathMatch: 'full',
+    component: DepartmentFormComponent,
+    canActivate: [appCanActivate],
+    data: {
+      roles: [AppRoles.Admin],
+      pagetitle: 'Department Bearbeiten'}
   },
   {
     path: 'dashboard',
