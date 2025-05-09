@@ -7,6 +7,7 @@ import {NoAccessComponent} from './components/views/pages/no-access/no-access.co
 import {DepartmentListComponent} from './components/views/pages/department-list/department-list.component';
 import {DepartmentFormComponent} from './components/views/pages/department-form/department-form.component';
 import {AbsenceReasonListComponent} from './components/views/pages/absence-reason-list/absence-reason-list.component';
+import {AbsenceReasonFormComponent} from './components/views/pages/absence-reason-form/absence-reason-form.component';
 
 export const routes: Routes = [
   {
@@ -53,6 +54,24 @@ export const routes: Routes = [
     data: {
       roles: [AppRoles.User],
       pagetitle: 'Absenzgründe Listenansicht'}
+  },
+  {
+    path: 'absenceReason/add',
+    pathMatch: 'full',
+    component: AbsenceReasonFormComponent,
+    canActivate: [appCanActivate],
+    data: {
+      roles: [AppRoles.Admin],
+      pagetitle: 'Absenzgrund Hinzufügen'}
+  },
+  {
+    path: 'absenceReason/edit/:id',
+    pathMatch: 'full',
+    component: AbsenceReasonFormComponent,
+    canActivate: [appCanActivate],
+    data: {
+      roles: [AppRoles.Admin],
+      pagetitle: 'Absenzgrund Bearbeiten'}
   },
   {
     path: 'noaccess',

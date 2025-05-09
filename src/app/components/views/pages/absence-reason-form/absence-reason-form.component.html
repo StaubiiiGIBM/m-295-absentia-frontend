@@ -1,0 +1,19 @@
+<div class="absence-reason-form-wrapper">
+
+  <h2 *ngIf="edit"> Absenzgrund Bearbeiten </h2>
+  <h2 *ngIf="!edit"> Absenzgrund Hinzufügen </h2>
+
+  <form (ngSubmit)="save(objForm.value)" [formGroup]="objForm!">
+
+    <mat-form-field>
+      <mat-label> Absenzgrund (min. 3) </mat-label>
+      <input #inputAbsenceReason formControlName="absence_reason" matInput minlength="3" maxlength="20" required>
+      <mat-hint align="start">{{inputAbsenceReason.value.length || 0}}/20</mat-hint>
+    </mat-form-field>
+
+    <button type="submit" [disabled]="!objForm.valid"  color="primary" mat-raised-button style="width: 200px">
+      Speichern
+    </button>
+
+  </form>
+</div>
