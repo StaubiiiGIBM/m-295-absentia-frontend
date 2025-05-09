@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AppAuthService} from '../../../../services/app.auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,6 +7,13 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
-export class DashboardComponent {
-
+export class DashboardComponent implements OnInit{
+  useralias: String = ''
+  public constructor(private authService: AppAuthService) {
+  }
+  ngOnInit(): void {
+    this.authService.useraliasObservable.subscribe(alias => {
+      this.useralias = alias;
+    });
+  }
 }
