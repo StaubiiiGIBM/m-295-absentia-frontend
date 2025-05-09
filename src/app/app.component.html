@@ -1,11 +1,11 @@
 <div style="height: 100%;width: 100%;overflow: hidden">
   <app-header></app-header>
   <div style="display: flex">
-    <div *appIsInRoles="[AppRoles.User]" style="width: 15%">
+    <div *appIsInRoles="[AppRoles.User]">
       <button *ngIf="!show" (click)="onClick()" mat-icon-button type="button">
         <mat-icon>arrow_forward_ios</mat-icon>
       </button>
-      <div *ngIf="show" style="height: 100vh" class="sidebar">
+      <div *ngIf="show" class="sidebar">
         <button (click)="onClick()" mat-icon-button type="button">
           <mat-icon>arrow_back_ios</mat-icon>
         </button>
