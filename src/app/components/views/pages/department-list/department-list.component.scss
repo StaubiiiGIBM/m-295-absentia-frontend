@@ -8,3 +8,17 @@
   align-items: center;
   justify-content: space-between;
 }
+.mat-column-description {
+  word-wrap: break-word;
+  white-space: unset;
+  flex: 0 0 28%;
+  width: 70%;
+  overflow-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}

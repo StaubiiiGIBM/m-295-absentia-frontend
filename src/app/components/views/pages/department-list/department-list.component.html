@@ -7,7 +7,7 @@
     </button>
   </div>
 
-  <table [dataSource]="departmentDataSource" mat-table>
+  <table [dataSource]="departmentDataSource" mat-table style="max-width:100%">
     <ng-container matColumnDef="id">
       <th *matHeaderCellDef mat-header-cell> {{'ID'}}</th>
       <td *matCellDef="let element" mat-cell> {{element.id}} </td>
