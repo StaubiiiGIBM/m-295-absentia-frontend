@@ -12,12 +12,20 @@ export const routes: Routes = [
     path: '', component: LoginComponent
   },
   {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [appCanActivate],
+    data: {
+      roles: [AppRoles.User],
+      pagetitle: 'Das Dashboard'}
+  },
+  {
     path: 'department',
     component: DepartmentListComponent,
     canActivate: [appCanActivate],
     data: {
       roles: [AppRoles.User],
-      pagetitle: 'Department Listenansicht'}
+      pagetitle: 'Abteilung Listenansicht'}
   },
   {
     path: 'department/add',
@@ -26,7 +34,7 @@ export const routes: Routes = [
     canActivate: [appCanActivate],
     data: {
       roles: [AppRoles.Admin],
-      pagetitle: 'Department Hinzufügen'}
+      pagetitle: 'Abteilung Hinzufügen'}
   },
   {
     path: 'department/edit/:id',
@@ -35,7 +43,7 @@ export const routes: Routes = [
     canActivate: [appCanActivate],
     data: {
       roles: [AppRoles.Admin],
-      pagetitle: 'Department Bearbeiten'}
+      pagetitle: 'Abteilung Bearbeiten'}
   },
   {
     path: 'dashboard',
