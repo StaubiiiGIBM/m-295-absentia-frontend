@@ -16,7 +16,7 @@ import {AppRoles} from '../app.roles';
 })
 export class AppComponent {
   title = 'm-295-absentia-frontend';
-  show: boolean = false
+  show: boolean = true
 
   onClick() {
     this.show = !this.show

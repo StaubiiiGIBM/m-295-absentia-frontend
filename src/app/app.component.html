@@ -1,7 +1,7 @@
-<div style="height: 100%;overflow: hidden">
+<div style="height: 100%;width: 100%;overflow: hidden">
   <app-header></app-header>
-  <div style="width: 100%; display: flex;">
-    <div *appIsInRoles="[AppRoles.User]">
+  <div style="display: flex">
+    <div *appIsInRoles="[AppRoles.User]" style="width: 15%">
       <button *ngIf="!show" (click)="onClick()" mat-icon-button type="button">
         <mat-icon>arrow_forward_ios</mat-icon>
       </button>
@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-    <div>
+    <div class="content">
       <router-outlet/>
     </div>
   </div>
