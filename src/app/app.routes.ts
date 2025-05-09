@@ -8,6 +8,7 @@ import {DepartmentListComponent} from './components/views/pages/department-list/
 import {DepartmentFormComponent} from './components/views/pages/department-form/department-form.component';
 import {AbsenceReasonListComponent} from './components/views/pages/absence-reason-list/absence-reason-list.component';
 import {AbsenceReasonFormComponent} from './components/views/pages/absence-reason-form/absence-reason-form.component';
+import {EmployeeListComponent} from './components/views/pages/employee-list/employee-list.component';
 
 export const routes: Routes = [
   {
@@ -72,6 +73,14 @@ export const routes: Routes = [
     data: {
       roles: [AppRoles.Admin],
       pagetitle: 'Absenzgrund Bearbeiten'}
+  },
+  {
+    path: 'employee',
+    component: EmployeeListComponent,
+    canActivate: [appCanActivate],
+    data: {
+      roles: [AppRoles.User],
+      pagetitle: 'Mitarbeiter Listenansicht'}
   },
   {
     path: 'noaccess',

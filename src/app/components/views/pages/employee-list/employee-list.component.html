@@ -1,0 +1,51 @@
+<div class="employee-list-wrapper">
+
+  <div class="employee-list-header">
+    <h2 style="width: 50%;"> Mitarbeiter Listenansicht </h2>
+    <button *appIsInRoles="[AppRoles.Admin]" class="add-button" (click)="add()" mat-button>
+      <mat-icon>add</mat-icon> Hinzufügen
+    </button>
+  </div>
+
+  <table [dataSource]="employeeDataSource" mat-table style="max-width:100%">
+    <ng-container matColumnDef="id">
+      <th *matHeaderCellDef mat-header-cell> {{'ID'}}</th>
+      <td *matCellDef="let element" mat-cell> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="first_name">
+      <th *matHeaderCellDef mat-header-cell> {{'Vorname'}}</th>
+      <td *matCellDef="let element" mat-cell> {{element.first_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="last_name">
+      <th *matHeaderCellDef mat-header-cell> {{'Nachname'}}</th>
+      <td *matCellDef="let element" mat-cell> {{element.last_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="department">
+      <th *matHeaderCellDef mat-header-cell> {{'Abteilung'}}</th>
+      <td *matCellDef="let element" mat-cell> {{element.department?.department_code}} </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="cols" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: cols" mat-row></tr>
+
+    <ng-container matColumnDef="actions">
+      <th *matHeaderCellDef class="w-75 th-center" mat-header-cell></th>
+      <td *matCellDef="let element" mat-cell style="text-align: end">
+        <button (click)="edit(element)" *appIsInRoles="[AppRoles.Admin]" color="primary" mat-button>
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button (click)="delete(element)" *appIsInRoles="[AppRoles.Admin]" color="warn" mat-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10]" [pageSize]="10"
+                 showFirstLastButtons>
+  </mat-paginator>
+
+</div>
