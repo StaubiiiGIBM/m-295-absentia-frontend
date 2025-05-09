@@ -6,6 +6,7 @@ import {AppRoles} from '../app.roles';
 import {NoAccessComponent} from './components/views/pages/no-access/no-access.component';
 import {DepartmentListComponent} from './components/views/pages/department-list/department-list.component';
 import {DepartmentFormComponent} from './components/views/pages/department-form/department-form.component';
+import {AbsenceReasonListComponent} from './components/views/pages/absence-reason-list/absence-reason-list.component';
 
 export const routes: Routes = [
   {
@@ -46,12 +47,12 @@ export const routes: Routes = [
       pagetitle: 'Abteilung Bearbeiten'}
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent,
+    path: 'absenceReason',
+    component: AbsenceReasonListComponent,
     canActivate: [appCanActivate],
     data: {
       roles: [AppRoles.User],
-      pagetitle: 'Das Dashboard'}
+      pagetitle: 'Absenzgründe Listenansicht'}
   },
   {
     path: 'noaccess',
