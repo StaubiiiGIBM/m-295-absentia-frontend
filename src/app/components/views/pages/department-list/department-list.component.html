@@ -2,7 +2,7 @@
 
   <div class="department-list-header">
     <h2 style="width: 50%;"> Abteilung Listenansicht </h2>
-    <button class="add-button" (click)="add()" mat-button>
+    <button *appIsInRoles="[AppRoles.Admin]" class="add-button" (click)="add()" mat-button>
       <mat-icon>add</mat-icon> Hinzufügen
     </button>
   </div>
