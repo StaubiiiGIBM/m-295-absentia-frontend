@@ -6,7 +6,7 @@
   <form (ngSubmit)="save(objForm.value)" [formGroup]="objForm!">
 
     <mat-form-field>
-      <mat-label> Code (Min. 2)</mat-label>
+      <mat-label> Kürzel (Min. 2)</mat-label>
       <input #inputDepartmentCode formControlName="department_code" matInput minlength="2" maxlength="3" required>
       <mat-hint align="start">{{inputDepartmentCode.value.length || 0}}/3</mat-hint>
     </mat-form-field>
