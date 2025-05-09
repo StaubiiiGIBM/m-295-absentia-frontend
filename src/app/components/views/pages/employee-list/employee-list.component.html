@@ -9,22 +9,22 @@
 
   <table [dataSource]="employeeDataSource" mat-table style="max-width:100%">
     <ng-container matColumnDef="id">
-      <th *matHeaderCellDef mat-header-cell> {{'ID'}}</th>
+      <th *matHeaderCellDef mat-header-cell> ID </th>
       <td *matCellDef="let element" mat-cell> {{element.id}} </td>
     </ng-container>
 
     <ng-container matColumnDef="first_name">
-      <th *matHeaderCellDef mat-header-cell> {{'Vorname'}}</th>
+      <th *matHeaderCellDef mat-header-cell> Vorname </th>
       <td *matCellDef="let element" mat-cell> {{element.first_name}} </td>
     </ng-container>
 
     <ng-container matColumnDef="last_name">
-      <th *matHeaderCellDef mat-header-cell> {{'Nachname'}}</th>
+      <th *matHeaderCellDef mat-header-cell> Nachname </th>
       <td *matCellDef="let element" mat-cell> {{element.last_name}} </td>
     </ng-container>
 
     <ng-container matColumnDef="department">
-      <th *matHeaderCellDef mat-header-cell> {{'Abteilung'}}</th>
+      <th *matHeaderCellDef mat-header-cell> Abteilung </th>
       <td *matCellDef="let element" mat-cell> {{element.department?.department_code}} </td>
     </ng-container>
 

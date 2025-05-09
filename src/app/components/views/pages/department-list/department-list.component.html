@@ -9,17 +9,17 @@
 
   <table [dataSource]="departmentDataSource" mat-table style="max-width:100%">
     <ng-container matColumnDef="id">
-      <th *matHeaderCellDef mat-header-cell> {{'ID'}}</th>
+      <th *matHeaderCellDef mat-header-cell> ID </th>
       <td *matCellDef="let element" mat-cell> {{element.id}} </td>
     </ng-container>
 
     <ng-container matColumnDef="department_code">
-      <th *matHeaderCellDef mat-header-cell> {{'Code'}}</th>
+      <th *matHeaderCellDef mat-header-cell> Kürzel </th>
       <td *matCellDef="let element" mat-cell> {{element.department_code}} </td>
     </ng-container>
 
     <ng-container matColumnDef="description">
-      <th *matHeaderCellDef mat-header-cell> {{'Beschreibung'}}</th>
+      <th *matHeaderCellDef mat-header-cell> Beschreibung </th>
       <td *matCellDef="let element" mat-cell> {{element.description}} </td>
     </ng-container>
 

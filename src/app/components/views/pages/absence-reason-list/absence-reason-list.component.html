@@ -9,12 +9,12 @@
 
   <table [dataSource]="absenceReasonDataSource" mat-table style="max-width:100%">
     <ng-container matColumnDef="id">
-      <th *matHeaderCellDef mat-header-cell> {{'ID'}}</th>
+      <th *matHeaderCellDef mat-header-cell> ID</th>
       <td *matCellDef="let element" mat-cell> {{element.id}} </td>
     </ng-container>
 
     <ng-container matColumnDef="absence_reason">
-      <th *matHeaderCellDef mat-header-cell> {{'Absenzgrund'}}</th>
+      <th *matHeaderCellDef mat-header-cell> Absenzgrund </th>
       <td *matCellDef="let element" mat-cell> {{element.absence_reason}} </td>
     </ng-container>
 
