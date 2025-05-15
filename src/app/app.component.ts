@@ -15,7 +15,7 @@ import {AppRoles} from '../app.roles';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'm-295-absentia-frontend';
+  title = 'm-294-absentia-frontend';
   show = true
 
   onClick() {
