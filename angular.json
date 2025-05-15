@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "m-295-absentia-frontend": {
+    "m-294-absentia-frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/m-295-absentia-frontend",
+            "outputPath": "dist/m-294-absentia-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "m-295-absentia-frontend:build:production"
+              "buildTarget": "m-294-absentia-frontend:build:production"
             },
             "development": {
-              "buildTarget": "m-295-absentia-frontend:build:development"
+              "buildTarget": "m-294-absentia-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
