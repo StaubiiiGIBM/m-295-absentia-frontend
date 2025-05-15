@@ -32,7 +32,7 @@ import {NgIf} from '@angular/common';
 })
 export class DepartmentFormComponent implements OnInit{
   department = new Department()
-  edit: boolean = false
+  edit = false
 
   constructor(private router: Router, private route: ActivatedRoute, private formBuilder: UntypedFormBuilder,
               private departmentService: DepartmentService, private snackBar: MatSnackBar) {

@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {
   MatCell,
   MatCellDef,
@@ -38,7 +38,7 @@ import {MatIcon} from '@angular/material/icon';
   templateUrl: './employee-list.component.html',
   styleUrl: './employee-list.component.scss'
 })
-export class EmployeeListComponent {
+export class EmployeeListComponent implements OnInit, AfterViewInit{
   employeeDataSource = new MatTableDataSource<Employee>()
   @ViewChild(MatPaginator) paginator?: MatPaginator
 

@@ -25,7 +25,7 @@ import {MatFormField} from '@angular/material/form-field';
 })
 export class AbsenceReasonFormComponent implements OnInit{
   absenceReason = new AbsenceReason()
-  edit: boolean = false
+  edit = false
 
   constructor(private router: Router, private route: ActivatedRoute, private formBuilder: UntypedFormBuilder,
               private absenceReasonService: AbsenceReasonService, private snackBar: MatSnackBar) {

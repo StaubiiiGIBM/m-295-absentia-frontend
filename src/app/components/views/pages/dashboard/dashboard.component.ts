@@ -8,7 +8,7 @@ import {AppAuthService} from '../../../../services/app.auth.service';
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent implements OnInit{
-  useralias: String = ''
+  useralias = ''
   public constructor(private authService: AppAuthService) {
   }
   ngOnInit(): void {

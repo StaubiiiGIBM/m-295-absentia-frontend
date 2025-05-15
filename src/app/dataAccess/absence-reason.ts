@@ -1,4 +1,4 @@
 export class AbsenceReason {
   public id!: number;
-  public absence_reason: string = '';
+  public absence_reason = '';
 }

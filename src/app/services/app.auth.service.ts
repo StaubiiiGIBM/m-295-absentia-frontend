@@ -8,10 +8,13 @@ import {BehaviorSubject, Observable, of} from 'rxjs';
 })
 export class AppAuthService {
   private jwtHelper: JwtHelperService = new JwtHelperService();
+  // eslint-disable-next-line @typescript-eslint/consistent-generic-constructors
   private usernameSubject: BehaviorSubject<string> = new BehaviorSubject('');
   public readonly usernameObservable: Observable<string> = this.usernameSubject.asObservable();
+  // eslint-disable-next-line @typescript-eslint/consistent-generic-constructors
   private useraliasSubject: BehaviorSubject<string> = new BehaviorSubject('');
   public readonly useraliasObservable: Observable<string> = this.useraliasSubject.asObservable();
+  // eslint-disable-next-line @typescript-eslint/consistent-generic-constructors
   private accessTokenSubject: BehaviorSubject<string> = new BehaviorSubject('');
   public readonly accessTokenObservable: Observable<string> = this.accessTokenSubject.asObservable();
 
@@ -44,9 +47,9 @@ export class AppAuthService {
     });
   }
 
-  public getRoles(): Observable<Array<string>> {
+  public getRoles(): Observable<string[]> {
     if (this._decodedAccessToken !== null) {
-      return new Observable<Array<string>>(observer => {
+      return new Observable<string[]>(observer => {
         if (this._decodedAccessToken.resource_access.absentia.roles) {
           if (Array.isArray(this._decodedAccessToken.resource_access.absentia.roles)) {
             const resultArr = this._decodedAccessToken.resource_access.absentia.roles.map((r: string) => r.replace('ROLE_', ''));

@@ -8,7 +8,7 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import {provideHttpClient, withInterceptorsFromDi, withXsrfConfiguration} from '@angular/common/http';
-import {AuthConfig, OAuthModule, OAuthStorage, provideOAuthClient} from 'angular-oauth2-oidc';
+import {AuthConfig, OAuthModule, OAuthStorage} from 'angular-oauth2-oidc';
 import {BrowserModule} from '@angular/platform-browser';
 import {authConfig} from './app.auth';
 import {AppAuthService} from './services/app.auth.service';

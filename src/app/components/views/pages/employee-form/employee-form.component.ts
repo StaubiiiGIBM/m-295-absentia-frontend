@@ -41,7 +41,7 @@ export class EmployeeFormComponent implements OnInit{
   employee = new Employee()
   departments: Department[] = [];
 
-  edit: boolean = false
+  edit = false
 
   constructor(private router: Router, private route: ActivatedRoute, private formBuilder: UntypedFormBuilder,
               private employeeService: EmployeeService, private snackBar: MatSnackBar, private departmentService: DepartmentService) {

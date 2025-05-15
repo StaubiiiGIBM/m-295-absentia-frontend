@@ -20,7 +20,6 @@ import {NgForOf, NgIf} from '@angular/common';
 import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
 import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from '@angular/material/datepicker';
-import {MatIcon} from '@angular/material/icon';
 
 @Component({
   selector: 'app-absence-form',
@@ -50,7 +49,7 @@ export class AbsenceFormComponent implements OnInit{
   employees: Employee[] = [];
   absenceReasons: AbsenceReason[] = [];
 
-  edit: boolean = false
+  edit = false
 
   public objForm = new UntypedFormGroup({
     employeeId: new UntypedFormControl(''),
