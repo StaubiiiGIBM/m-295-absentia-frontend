@@ -10,6 +10,7 @@ import {AbsenceReasonListComponent} from './components/views/pages/absence-reaso
 import {AbsenceReasonFormComponent} from './components/views/pages/absence-reason-form/absence-reason-form.component';
 import {EmployeeListComponent} from './components/views/pages/employee-list/employee-list.component';
 import {EmployeeFormComponent} from './components/views/pages/employee-form/employee-form.component';
+import {AbsenceListComponent} from './components/views/pages/absence-list/absence-list.component';
 
 export const routes: Routes = [
   {
@@ -100,6 +101,14 @@ export const routes: Routes = [
     data: {
       roles: [AppRoles.Admin],
       pagetitle: 'Mitarbeiter Bearbeiten'}
+  },
+  {
+    path: 'absence',
+    component: AbsenceListComponent,
+    canActivate: [appCanActivate],
+    data: {
+      roles: [AppRoles.User],
+      pagetitle: 'Absenzen Listenansicht'}
   },
   {
     path: 'noaccess',
