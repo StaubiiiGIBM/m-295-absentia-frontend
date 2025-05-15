@@ -1,0 +1,35 @@
+<div class="employee-form-wrapper">
+
+  <h2 *ngIf="edit"> Mitarbeiter Bearbeiten </h2>
+  <h2 *ngIf="!edit"> Mitarbeiter Hinzufügen </h2>
+
+  <form (ngSubmit)="save(objForm.value)" [formGroup]="objForm!">
+
+    <mat-form-field>
+      <mat-label> Vorname (Min. 2)</mat-label>
+      <input #inputFirstName formControlName="first_name" matInput minlength="2" maxlength="30" required>
+      <mat-hint align="start">{{inputFirstName.value.length || 0}}/30</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label> Nachname (Min.2)</mat-label>
+      <input #inputLastName formControlName="last_name" matInput minlength="2" maxlength="30" required>
+      <mat-hint align="start">{{inputLastName.value.length || 0}}/30</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label> Abteilung </mat-label>
+      <mat-select formControlName="departmentId" required>
+        <mat-option *ngFor="let department of departments" [value]="department.id">
+          {{department.department_code}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button type="submit" [disabled]="!objForm.valid"  color="primary" mat-raised-button style="width: 200px">
+      Speichern
+    </button>
+
+  </form>
+</div>
+
