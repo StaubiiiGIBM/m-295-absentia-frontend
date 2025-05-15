@@ -1,0 +1,52 @@
+<div class="absence-form-wrapper">
+
+  <h2 *ngIf="edit"> Absenz Bearbeiten </h2>
+  <h2 *ngIf="!edit"> Absenz Hinzufügen </h2>
+
+  <form (ngSubmit)="save(objForm.value)" [formGroup]="objForm!">
+
+    <mat-form-field>
+      <mat-label> Mitarbeiter </mat-label>
+      <mat-select formControlName="employeeId" required>
+        <mat-option *ngFor="let employee of employees" [value]="employee.id">
+          {{employee.last_name}} {{employee.first_name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label> Von </mat-label>
+      <input [matDatepicker]="pickerFromDate" formControlName="from_date" matInput required>
+      <mat-datepicker-toggle [for]="pickerFromDate" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker #pickerFromDate></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label> Bis </mat-label>
+      <input [matDatepicker]="pickerToDate" formControlName="to_date" matInput required>
+      <mat-datepicker-toggle [for]="pickerToDate" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker #pickerToDate></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label> Absenzgrund </mat-label>
+        <mat-select formControlName="absenceReasonId" required>
+          <mat-option *ngFor="let absence_reason of absenceReasons" [value]="absence_reason.id">
+            {{absence_reason.absence_reason}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label> Beschreibung </mat-label>
+      <input #inputDescription formControlName="description" matInput maxlength="255" required>
+      <mat-hint align="start">{{inputDescription.value.length || 0}}/255</mat-hint>
+    </mat-form-field>
+
+    <button type="submit" [disabled]="!objForm.valid"  color="primary" mat-raised-button style="width: 200px">
+      Speichern
+    </button>
+
+  </form>
+</div>
+

@@ -11,6 +11,7 @@ import {AbsenceReasonFormComponent} from './components/views/pages/absence-reaso
 import {EmployeeListComponent} from './components/views/pages/employee-list/employee-list.component';
 import {EmployeeFormComponent} from './components/views/pages/employee-form/employee-form.component';
 import {AbsenceListComponent} from './components/views/pages/absence-list/absence-list.component';
+import {AbsenceFormComponent} from './components/views/pages/absence-form/absence-form.component';
 
 export const routes: Routes = [
   {
@@ -109,6 +110,24 @@ export const routes: Routes = [
     data: {
       roles: [AppRoles.User],
       pagetitle: 'Absenzen Listenansicht'}
+  },
+  {
+    path: 'absence/add',
+    pathMatch: 'full',
+    component: AbsenceFormComponent,
+    canActivate: [appCanActivate],
+    data: {
+      roles: [AppRoles.User],
+      pagetitle: 'Absenz Hinzufügen'}
+  },
+  {
+    path: 'absence/edit/:id',
+    pathMatch: 'full',
+    component: AbsenceFormComponent,
+    canActivate: [appCanActivate],
+    data: {
+      roles: [AppRoles.Admin],
+      pagetitle: 'Absenz Bearbeiten'}
   },
   {
     path: 'noaccess',
