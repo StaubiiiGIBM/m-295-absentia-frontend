@@ -12,6 +12,7 @@ import {AuthConfig, OAuthModule, OAuthStorage, provideOAuthClient} from 'angular
 import {BrowserModule} from '@angular/platform-browser';
 import {authConfig} from './app.auth';
 import {AppAuthService} from './services/app.auth.service';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 export function storageFactory(): OAuthStorage {
   return sessionStorage;
@@ -24,6 +25,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     importProvidersFrom(
       BrowserModule,
+      MatMomentDateModule,
       OAuthModule.forRoot({
         resourceServer: {
           sendAccessToken: true }
