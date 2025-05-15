@@ -25,12 +25,12 @@
 
     <ng-container matColumnDef="from_date">
       <th *matHeaderCellDef mat-header-cell> Start</th>
-      <td *matCellDef="let element" mat-cell> {{element.from_date}} </td>
+      <td *matCellDef="let element" mat-cell> {{element.from_date.substring(0,10)}} </td>
     </ng-container>
 
     <ng-container matColumnDef="to_date">
       <th *matHeaderCellDef mat-header-cell> Ende</th>
-      <td *matCellDef="let element" mat-cell> {{element.to_date}} </td>
+      <td *matCellDef="let element" mat-cell> {{element.to_date.substring(0,10)}} </td>
     </ng-container>
 
     <ng-container matColumnDef="absence_reason">
