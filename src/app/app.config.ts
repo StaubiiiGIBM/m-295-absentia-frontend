@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
-import { routes } from './app.routes';
+import { routes } from './app-routing.module';
 import {provideHttpClient, withInterceptorsFromDi, withXsrfConfiguration} from '@angular/common/http';
 import {AuthConfig, OAuthModule, OAuthStorage} from 'angular-oauth2-oidc';
 import {BrowserModule} from '@angular/platform-browser';

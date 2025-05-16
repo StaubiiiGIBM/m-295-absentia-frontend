@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './components/views/pages/dashboard/dashboard.component';
 import {LoginComponent} from './components/views/core/login/login.component';
 import {appCanActivate} from './guard/app.auth.guard';
@@ -12,6 +12,7 @@ import {EmployeeListComponent} from './components/views/pages/employee-list/empl
 import {EmployeeFormComponent} from './components/views/pages/employee-form/employee-form.component';
 import {AbsenceListComponent} from './components/views/pages/absence-list/absence-list.component';
 import {AbsenceFormComponent} from './components/views/pages/absence-form/absence-form.component';
+import {NgModule} from '@angular/core';
 
 export const routes: Routes = [
   {
@@ -134,3 +135,11 @@ export const routes: Routes = [
     component: NoAccessComponent
   }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {
+
+}
