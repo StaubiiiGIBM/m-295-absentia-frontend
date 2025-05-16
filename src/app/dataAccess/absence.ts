@@ -6,5 +6,6 @@ export class Absence {
   public employee: Employee = new Employee();
   public from_date: Date = new Date();
   public to_date: Date = new Date();
+  public description: string = '';
   public absenceReason: AbsenceReason = new AbsenceReason()
 }
